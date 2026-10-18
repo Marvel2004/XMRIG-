@@ -1,4 +1,4 @@
-# XMRig Cryptominer — Dynamic Analysis and Detection
+<img width="1920" height="1080" alt="Screenshot from 2026-10-02 22-06-11" src="https://github.com/user-attachments/assets/ec08cfab-611a-4e12-9626-6356daf0dd49" /># XMRig Cryptominer — Dynamic Analysis and Detection
 
 ## 1. Introduction
 
@@ -16,6 +16,7 @@ The sample was executed using its official benchmark mode. No real mining pool o
 | Monitoring tools | `htop`, `ps`, `/proc`, `ss`, `strace` |
 | Network monitoring | `ss`, `strace`, baseline packet capture |
 | Objective | Controlled behavioural analysis |
+</br>
 
 ## 3. Establishing the System Baseline
 
@@ -23,11 +24,15 @@ Before executing XMRig, the virtual machine's resource usage and network activit
 
 The baseline collection included CPU utilization, memory consumption, active processes, network connections, listening sockets, network interfaces, DNS status, disk usage, and system information.
 
-During one baseline observation, Suricata consumed approximately 101% CPU and 10.7% memory. This was important because it demonstrated that background security monitoring could contribute substantially to the system's overall CPU usage.
+During one baseline observation, Suricata consumed approximately **_101% CPU and 10.7% memory_**. This was important because it demonstrated that background security monitoring could contribute substantially to the system's overall CPU usage.
 
 Consequently, system-wide CPU utilization was interpreted alongside individual process activity rather than being attributed to XMRig automatically.
 
+</br>
+</br>
 {picture of any baseline reading with the command}
+</br>
+</br>
 
 ## 4. Monitoring Resource Consumption with htop
 
@@ -56,14 +61,20 @@ The change in the `htop` process list was significant because it connected the b
 During analysis, the process was also examined using:
 
 ```bash
-ps -p 3692 -o pid,ppid,stat,%cpu,%mem,nlwp,etime,cmd
+ps -p 3250 -o pid,ppid,stat,%cpu,%mem,nlwp,etime,cmd
 ```
 
-The recorded PID was `3692`; process IDs can change between executions.
+The recorded PID was `3250`; process IDs can change between executions.
 
-The process snapshot showed XMRig running with multiple threads and substantial CPU and memory consumption. Subsequent measurements were taken from the improved benchmark run to document the final execution.
+The process snapshot showed XMRig running with multiple threads (7) and substantial CPU and memory consumption. Subsequent measurements were taken from the improved benchmark run to document the final execution.
 
 **Evidence note:** The process appearing in `htop` confirms that XMRig was running. High resource consumption alone does not establish malicious activity; it must be interpreted in the context of the executable, its command line, and whether its execution was authorized.
+
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-02 22-06-11" src="https://github.com/user-attachments/assets/04d304aa-ae99-4d42-a373-0ea347a808bf" />
+</br>
+</br>
 
 ## 5. Controlled XMRig Execution
 
@@ -95,6 +106,13 @@ The benchmark completed at approximately 533.6 hashes per second under the teste
 The reported RandomX dataset and resident memory demonstrate that the workload required substantial memory. Five mining threads were reported, while the process had seven threads in total.
 
 Huge-page usage remained at 0%. Huge pages are a memory-management optimization that can improve performance for some workloads; their absence does not indicate malicious behaviour.
+
+</br>
+</br>
+<img width="1920" height="1145" alt="Screenshot from 2026-10-02 22-35-31" src="https://github.com/user-attachments/assets/4ce55c44-8c20-4a7f-a5c0-89c1acb20ef6" />
+</br>
+</br>
+
 
 ### 5.1 Understanding the Final Hash Rate
 
@@ -128,6 +146,12 @@ The improved run showed approximately 2.31 GiB of resident memory and negligible
 
 The process I/O counters and file descriptors were also examined to understand the process's interaction with the operating system. These measurements were interpreted in context rather than assuming that every recorded read or open descriptor represented suspicious file activity.
 
+</br>
+</br>
+<img width="1920" height="1145" alt="Screenshot from 2026-10-02 22-35-31" src="https://github.com/user-attachments/assets/5b457c9d-e460-4f2a-8ee4-ff480cff5052" />
+</br>
+</br>
+
 ## 7. System-Call Analysis Using strace
 
 To examine the interactions between XMRig and the Linux kernel, the benchmark was executed under `strace`.
@@ -136,6 +160,8 @@ To examine the interactions between XMRig and the Linux kernel, the benchmark wa
 strace -f -o ~/XMRig/analysis/xmrig-strace.txt \
   ./xmrig --bench=1M
 ```
+
+
 
 The resulting trace contained approximately 7,647 lines.
 

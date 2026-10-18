@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Screenshot from 2026-10-02 22-06-11" src="https://github.com/user-attachments/assets/ec08cfab-611a-4e12-9626-6356daf0dd49" /># XMRig Cryptominer — Dynamic Analysis and Detection
+# XMRig Cryptominer — Dynamic Analysis and Detection
 
 ## 1. Introduction
 

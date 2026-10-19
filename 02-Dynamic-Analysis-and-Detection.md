@@ -24,13 +24,27 @@ Before executing XMRig, the virtual machine's resource usage and network activit
 
 The baseline collection included CPU utilization, memory consumption, active processes, network connections, listening sockets, network interfaces, DNS status, disk usage, and system information.
 
+</br>
+</br>
+<img width="1358" height="372" alt="Screenshot from 2026-10-19 07-36-28" src="https://github.com/user-attachments/assets/97030f7e-bd30-4213-865c-d2679c0bb50f" />
+
+</br>
+
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 07-39-00" src="https://github.com/user-attachments/assets/44321b92-033f-4128-8afd-83169cf26da3" />
+
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 07-39-25" src="https://github.com/user-attachments/assets/b55cac61-e505-4c19-b161-5d9d8793b0e9" />
+</br>
+</br>
+
 During one baseline observation, Suricata consumed approximately **_101% CPU and 10.7% memory_**. This was important because it demonstrated that background security monitoring could contribute substantially to the system's overall CPU usage.
 
 Consequently, system-wide CPU utilization was interpreted alongside individual process activity rather than being attributed to XMRig automatically.
 
 </br>
 </br>
-{picture of any baseline reading with the command}
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 07-39-57" src="https://github.com/user-attachments/assets/f0783f49-69e2-41b7-9c52-1809853986e2" />
 </br>
 </br>
 
@@ -50,9 +64,11 @@ After executing XMRig, its process appeared in the process list under the comman
 
 The appearance of XMRig in the process list and its associated resource consumption provided a practical way to correlate the observed workload with the executable being investigated.
 
-
-{pictures of htop comparison before and after xmrig initialization}
-
+</br>
+</br>
+<img width="924" height="591" alt="Screenshot from 2026-10-02 21-54-21 - Copy" src="https://github.com/user-attachments/assets/81a41f08-94d0-47cf-b99d-a21fd826a25b" />
+</br>
+</br>
 
 ### 4.1 Interpreting the Process-List Change
 

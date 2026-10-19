@@ -78,7 +78,7 @@ These commands help document the executable's relationship with system libraries
 </br>
 </br>
 
-{Screenshot of ldd and readelf -d}
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-00-19" src="https://github.com/user-attachments/assets/7e903bd4-e1c0-4869-bc54-9035a88e6efe" />
 
 </br>
 </br>
@@ -98,14 +98,15 @@ The investigation identified references associated with:
 - **RandomX and Monero:** consistent with XMRig's Monero mining functionality.
 - **Stratum and pool terminology:** consistent with mining-pool communication functionality.
 - **Wallet configuration:** consistent with configuration for the destination of mining rewards.
-- **TLS and HTTP API:** references associated with encrypted communication and an HTTP-based interface.
+- **TLS and HTTP API:** references associated with encrypted communication and an HTTP-based interface
 
 Together, these strings support the conclusion that the binary contains mining-related functionality and configuration/communication references. Strings are leads, not proof of execution: they do not demonstrate that a pool was contacted, a share was submitted, cryptocurrency was earned, or a remote API was accessed during the observed run.
 
-
-
-**Evidence to capture:** a terminal screenshot with the matching strings visible. Highlight the terms above only where they actually appear in your output.
-
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-02-06" src="https://github.com/user-attachments/assets/df24069c-720a-4aa8-9da1-58c09494077e" />
+</br>
+</br>
 
 
 ## 7. Dynamic symbols: functionality suggested by imports
@@ -131,10 +132,14 @@ The captured symbol output included examples in these groups:
 
 These groups are consistent with a computationally intensive program that uses multiple threads and has networking and file-handling functionality. They do not prove that each imported function was called, nor that any network operation was malicious.
 
-
-
-**Evidence to capture:** a readable excerpt grouped around networking and threading symbols. Do not present the entire symbol table if it makes the relevant findings too small to read.
-
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-03-01" src="https://github.com/user-attachments/assets/92627b6f-b831-4f98-b58a-7b1304cb2829" />
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-04-00" src="https://github.com/user-attachments/assets/73f70341-fb04-4817-a835-dd46a4928108" />
+</br>
+</br>
 
 ## 8. Static-analysis findings
 

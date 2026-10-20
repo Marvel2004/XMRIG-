@@ -107,7 +107,12 @@ Together, these strings support the conclusion that the binary contains mining-r
 <img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-02-06" src="https://github.com/user-attachments/assets/df24069c-720a-4aa8-9da1-58c09494077e" />
 </br>
 </br>
-
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-29-50" src="https://github.com/user-attachments/assets/fd7b25ae-532f-48a9-aa5b-e7dcfd564ec7" />
+</br>
+</br>
+<img width="1920" height="1080" alt="Screenshot from 2026-10-19 08-31-14" src="https://github.com/user-attachments/assets/fd4127c1-88ce-4dd5-81b9-9c71c607f520" />
+</br>
+</br>
 
 ## 7. Dynamic symbols: functionality suggested by imports
 

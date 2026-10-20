@@ -7,6 +7,7 @@ This stage examined the XMRig executable without relying on runtime behaviour. T
 **Context:** XMRig is legitimate open-source cryptocurrency-mining software. Its functionality can be abused in cryptojacking, but the presence of XMRig alone does not establish malicious deployment. This report distinguishes what the binary contains from what was observed when it ran.
 
 </br>
+
 ## 2. Sample identification and integrity
 
 ```bash
